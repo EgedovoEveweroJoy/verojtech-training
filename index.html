@@ -58,57 +58,35 @@
             background-color: white;
         }
 
-        /* Dropdown Menu */
-        .dropdown-menu {
+        /* Drawer Menu */
+        .drawer-menu {
             display: none;
-            position: absolute;
-            top: 60px;
+            position: fixed;
+            top: 0;
             left: 0;
+            height: 100%;
+            width: 250px;
             background-color: #003366;
-            width: 100%;
-            text-align: left;
-            padding: 1rem 0;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            z-index: 1001;
-            opacity: 0;
-            transition: opacity 0.3s ease-in-out;
+            padding: 2rem 1rem;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+            z-index: 1100;
+            transform: translateX(-100%);
+            transition: transform 0.3s ease-in-out;
         }
 
-        .dropdown-menu a {
+        .drawer-menu.open {
+            transform: translateX(0);
+        }
+
+        .drawer-menu a {
             color: white;
             text-decoration: none;
             display: block;
-            padding: 0.8rem 2rem;
+            padding: 0.8rem 0;
             font-size: 1.1rem;
         }
 
-        .dropdown-menu a:hover {
-            background-color: #005f87;
-        }
-
-        /* Explore Dropdown */
-        .explore-dropdown {
-            display: none;
-            position: absolute;
-            top: 60px;
-            left: 0;
-            background-color: #003366;
-            width: 100%;
-            padding: 1rem 0;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            opacity: 0;
-            transition: opacity 0.3s ease-in-out;
-        }
-
-        .explore-dropdown a {
-            color: white;
-            text-decoration: none;
-            display: block;
-            padding: 0.8rem 2rem;
-            font-size: 1.1rem;
-        }
-
-        .explore-dropdown a:hover {
+        .drawer-menu a:hover {
             background-color: #005f87;
         }
 
@@ -148,6 +126,53 @@
         }
 
         /* Main Content Sections */
+        .welcome-section {
+            background: url('https://via.placeholder.com/1600x900') no-repeat center center/cover;
+            color: white;
+            padding: 5rem 2rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .welcome-section::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: -1;
+        }
+
+        .welcome-section h2 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .welcome-section p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .welcome-section .btn {
+            padding: 1rem 3rem;
+            font-size: 1.2rem;
+            font-weight: 700;
+            background: #007BFF;
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .welcome-section .btn:hover {
+            background-color: #0056b3;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+        }
+
         section {
             margin: 5rem auto;
             padding: 2rem;
@@ -265,10 +290,6 @@
                 display: none;
             }
 
-            .explore-dropdown {
-                display: none;
-            }
-
             .register-btn-mobile {
                 display: block;
                 margin-top: 60px;
@@ -370,13 +391,8 @@
     <h1>Verojtech Solutions</h1>
 </header>
 
-<!-- Register button for mobile -->
-<div class="register-btn-mobile">
-    <a href="https://forms.gle/Cxe5uq3gvBzRRxRs8" class="btn" target="_blank" rel="noopener noreferrer">Register Now</a>
-</div>
-
-<!-- Dropdown Menu for Hamburger -->
-<div class="dropdown-menu">
+<!-- Drawer Menu for Hamburger -->
+<div class="drawer-menu" id="drawer-menu">
     <span class="close-btn" aria-label="Close Menu" role="button" tabindex="0">×</span>
     <a href="#data-processing">Data Processing</a>
     <a href="#web-design">Web Design</a>
@@ -388,15 +404,13 @@
 </div>
 
 <main>
-    <section>
+    <section class="welcome-section">
         <h2 class="section-title">Welcome to Verojtech Solutions</h2>
         <p>Discover the power of Verojtech Solutions. Our courses offer a wide range of skills and expertise to help you succeed in your chosen field. Join us now and unlock your potential!</p>
         <p>Our training programs are designed to help you develop the skills you need to succeed in today's competitive job market. Whether you're looking to start a new career or advance in your current role, we have the courses you need to achieve your goals.</p>
         <p>Our instructors are industry experts with years of experience in their respective fields. They are dedicated to helping you succeed and will provide you with the knowledge and tools you need to excel in your chosen profession.</p>
         <p>Don't wait any longer - enroll in one of our courses today and take the first step towards a brighter future!</p>
-        <div class="register-btn-wrapper">
-            <a href="https://forms.gle/Cxe5uq3gvBzRRxRs8" class="btn" target="_blank" rel="noopener noreferrer">Register Now</a>
-        </div>
+        <a href="https://forms.gle/Cxe5uq3gvBzRRxRs8" class="btn" target="_blank" rel="noopener noreferrer">Register Now</a>
     </section>
     <section id="data-processing">
         <h2>Data Processing</h2>
@@ -462,57 +476,58 @@
             </div>
         </div>
     </section>
-<section id="video-editing">
-    <h2>Video Editing</h2>
-    <div class="courses-list">
-        <div class="course-item">
-            <img src="https://img.freepik.com/free-vector/video-editing-concept-illustration_114360-2428.jpg?ga=GA1.1.1704367893.1734308952&semt=ais_incoming" alt="Video Editing">
-    <h3>Video Editing</h3>
-        <p>Learn to edit videos like a pro using industry-standard software. This course covers everything from basic editing techniques to advanced effects.</p>
-        <a href="#" class="btn" onclick="alert('Course outline available after registration and payment verification.')">Course Outline</a>
-        <a href="https://whatsapp.com/channel/0029VaKyRye05MUdCQWN4E0m" class="btn">Join WhatsApp channel</a>
-    </div>
-</div>
-</section>
 
-<section id="virtual-assistant">
-    <h2>Virtual Assistant</h2>
-    <div class="courses-list">
-        <div class="course-item">
-            <img src="https://img.freepik.com/free-vector/virtual-assistant-concept-illustration_114360-2428.jpg?ga=GA1.1.1704367893.1734308952&semt=ais_incoming" alt="Virtual Assistant">
-            <h3>Virtual Assistant</h3>
-            <p>Master the skills needed to become a successful virtual assistant. This course covers communication, administration, and technical skills required for the role.</p>
-            <a href="#" class="btn" onclick="alert('Course outline available after registration and payment verification.')">Course Outline</a>
-            <a href="https://whatsapp.com/channel/0029VaKyRye05MUdCQWN4E0m" class="btn">Join WhatsApp channel</a>
+    <section id="video-editing">
+        <h2>Video Editing</h2>
+        <div class="courses-list">
+            <div class="course-item">
+                <img src="https://img.freepik.com/free-vector/video-editing-concept-illustration_114360-11318.jpg?ga=GA1.1.1704367893.1734308952&semt=ais_incoming" alt="Video Editing">
+                <h3>Video Editing</h3>
+                <p>Learn to edit videos like a pro using industry-standard software. This course covers everything from basic editing techniques to advanced effects.</p>
+                <a href="#" class="btn" onclick="alert('Course outline available after registration and payment verification.')">Course Outline</a>
+                <a href="https://whatsapp.com/channel/0029VaKyRye05MUdCQWN4E0m" class="btn">Join WhatsApp channel</a>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- Testimonials Section -->
-<section id="testimonials">
-    <h2>What Our Students Say</h2>
-    <div class="testimonial">
-        <p>"The training programs at Verojtech Solutions have greatly improved my technical skills. The instructors are knowledgeable and the content is very relevant."</p>
-        <h3>- Jane Doe, Web Designer</h3>
-    </div>
-    <div class="testimonial">
-        <p>"I completed the UI/UX Design course and it was fantastic. The hands-on projects and real-world examples helped me land my first job as a junior designer!"</p>
-        <h3>- John Smith, UI/UX Designer</h3>
-    </div>
-</section>
+    <section id="virtual-assistant">
+        <h2>Virtual Assistant</h2>
+        <div class="courses-list">
+            <div class="course-item">
+                <img src="https://img.freepik.com/free-vector/virtual-assistant-concept-illustration_114360-2428.jpg?ga=GA1.1.1704367893.1734308952&semt=ais_incoming" alt="Virtual Assistant">
+                <h3>Virtual Assistant</h3>
+                <p>Master the skills needed to become a successful virtual assistant. This course covers communication, administration, and technical skills required for the role.</p>
+                <a href="#" class="btn" onclick="alert('Course outline available after registration and payment verification.')">Course Outline</a>
+                <a href="https://whatsapp.com/channel/0029VaKyRye05MUdCQWN4E0m" class="btn">Join WhatsApp channel</a>
+            </div>
+        </div>
+    </section>
 
-<!-- Contact Form Section -->
-<section id="contact">
-    <h2>Contact Us</h2>
-    <div class="contact-form">
-        <form action="https://formspree.io/f/{your-form-id}" method="POST">
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="_replyto" placeholder="Your Email" required>
-            <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-            <button type="submit">Send Message</button>
-        </form>
-    </div>
-</section>
+    <!-- Testimonials Section -->
+    <section id="testimonials">
+        <h2>What Our Students Say</h2>
+        <div class="testimonial">
+            <p>"The training programs at Verojtech Solutions have greatly improved my technical skills. The instructors are knowledgeable and the content is very relevant."</p>
+            <h3>- Jane Doe, Web Designer</h3>
+        </div>
+        <div class="testimonial">
+            <p>"I completed the UI/UX Design course and it was fantastic. The hands-on projects and real-world examples helped me land my first job as a junior designer!"</p>
+            <h3>- John Smith, UI/UX Designer</h3>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <div class="contact-form">
+            <form action="https://formspree.io/f/{your-form-id}" method="POST">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="_replyto" placeholder="Your Email" required>
+                <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
 </main>
 
 <footer>
@@ -528,32 +543,21 @@
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         const hamburgerMenu = document.querySelector('.hamburger-menu');
-        const dropdownMenu = document.querySelector('.dropdown-menu');
-        const exploreBtn = document.querySelector('.explore-btn');
-        const exploreDropdown = document.querySelector('.explore-dropdown');
-        const closeBtns = document.querySelectorAll('.close-btn');
+        const drawerMenu = document.getElementById('drawer-menu');
+        const closeBtn = document.querySelector('.close-btn');
 
         hamburgerMenu.addEventListener('click', function() {
-            const isExpanded = hamburgerMenu.getAttribute('aria-expanded') === 'true' || false;
-            hamburgerMenu.setAttribute('aria-expanded', !isExpanded);
-            dropdownMenu.style.display = isExpanded ? 'none' : 'block';
-            dropdownMenu.style.opacity = isExpanded ? '0' : '1';
+            drawerMenu.classList.toggle('open');
         });
 
-        exploreBtn.addEventListener('click', function() {
-            const isExpanded = exploreBtn.getAttribute('aria-expanded') === 'true' || false;
-            exploreBtn.setAttribute('aria-expanded', !isExpanded);
-            exploreDropdown.style.display = isExpanded ? 'none' : 'block';
-            exploreDropdown.style.opacity = isExpanded ? '0' : '1';
+        closeBtn.addEventListener('click', function() {
+            drawerMenu.classList.remove('open');
         });
 
-        closeBtns.forEach(btn => {
-            btn.addEventListener('click', function() {
-                dropdownMenu.style.display = 'none';
-                dropdownMenu.style.opacity = '0';
-                exploreDropdown.style.display = 'none';
-                exploreDropdown.style.opacity = '0';
-            });
+        drawerMenu.addEventListener('click', function(event) {
+            if (event.target.tagName === 'A') {
+                drawerMenu.classList.remove('open');
+            }
         });
     });
 </script>

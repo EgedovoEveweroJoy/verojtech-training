@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Verojtech Solutions Training Programs</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
         /* Global Styles */
         body {
@@ -34,7 +35,7 @@
             align-items: center;
         }
         header h1 {
-            font-size: 1rem;
+            font-size: 2rem;
             margin: 0;
             font-weight: 700;
             flex-grow: 1;
@@ -122,8 +123,8 @@
         }
 
         .container {
-            max-width: 900px;
-            margin: 20px auto;
+            max-width: 1200px;
+            margin: 100px auto 20px;
             padding: 20px;
             background: #fff;
             border-radius: 8px;
@@ -220,6 +221,11 @@
             color: #007BFF;
         }
 
+        .social-icon {
+            margin: 0 10px;
+            font-size: 1.5rem;
+        }
+
         /* Animations */
         @keyframes fadeIn {
             0% { opacity: 0; }
@@ -302,6 +308,55 @@
                 display: none;
             }
         }
+
+        /* Additional Styles */
+        .testimonial {
+            background: #f9f9f9;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 2rem;
+        }
+        
+        .testimonial p {
+            font-style: italic;
+            color: #555;
+        }
+        
+        .testimonial h3 {
+            margin-top: 1rem;
+            font-size: 1.2rem;
+            color: #333;
+        }
+
+        .contact-form {
+            background: #f9f9f9;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 2rem;
+        }
+        
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 0.8rem;
+            margin: 0.5rem 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        
+        .contact-form button {
+            padding: 0.8rem 2rem;
+            background: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        .contact-form button:hover {
+            background: #0056b3;
+        }
     </style>
 </head>
 <body>
@@ -312,10 +367,7 @@
         <div></div>
         <div></div>
     </div>
-    <h1>Verojtech Solutions Training Programs</h1>
-    <div class="register-btn-wrapper">
-        <a href="https://forms.gle/Cxe5uq3gvBzRRxRs8" class="btn" target="_blank" rel="noopener noreferrer">Register Now</a>
-    </div>
+    <h1>Verojtech Solutions</h1>
 </header>
 
 <!-- Register button for mobile -->
@@ -336,6 +388,16 @@
 </div>
 
 <main>
+    <section>
+        <h2 class="section-title">Welcome to Verojtech Solutions</h2>
+        <p>Discover the power of Verojtech Solutions. Our courses offer a wide range of skills and expertise to help you succeed in your chosen field. Join us now and unlock your potential!</p>
+        <p>Our training programs are designed to help you develop the skills you need to succeed in today's competitive job market. Whether you're looking to start a new career or advance in your current role, we have the courses you need to achieve your goals.</p>
+        <p>Our instructors are industry experts with years of experience in their respective fields. They are dedicated to helping you succeed and will provide you with the knowledge and tools you need to excel in your chosen profession.</p>
+        <p>Don't wait any longer - enroll in one of our courses today and take the first step towards a brighter future!</p>
+        <div class="register-btn-wrapper">
+            <a href="https://forms.gle/Cxe5uq3gvBzRRxRs8" class="btn" target="_blank" rel="noopener noreferrer">Register Now</a>
+        </div>
+    </section>
     <section id="data-processing">
         <h2>Data Processing</h2>
         <div class="courses-list">
@@ -400,36 +462,67 @@
             </div>
         </div>
     </section>
+<section id="video-editing">
+    <h2>Video Editing</h2>
+    <div class="courses-list">
+        <div class="course-item">
+            <img src="https://img.freepik.com/free-vector/video-editing-concept-illustration_114360-2428.jpg?ga=GA1.1.1704367893.1734308952&semt=ais_incoming" alt="Video Editing">
+    <h3>Video Editing</h3>
+        <p>Learn to edit videos like a pro using industry-standard software. This course covers everything from basic editing techniques to advanced effects.</p>
+        <a href="#" class="btn" onclick="alert('Course outline available after registration and payment verification.')">Course Outline</a>
+        <a href="https://whatsapp.com/channel/0029VaKyRye05MUdCQWN4E0m" class="btn">Join WhatsApp channel</a>
+    </div>
+</div>
+</section>
 
-    <section id="video-editing">
-        <h2>Video Editing</h2>
-        <div class="courses-list">
-            <div class="course-item">
-                <img src="https://img.freepik.com/free-vector/video-editing-concept-illustration_114360-11318.jpg?ga=GA1.1.1704367893.1734308952&semt=ais_incoming" alt="Video Editing">
-                <h3>Video Editing</h3>
-                <p>Learn to edit videos like a pro using industry-standard software. This course covers everything from basic editing techniques to advanced effects.</p>
-                <a href="#" class="btn" onclick="alert('Course outline available after registration and payment verification.')">Course Outline</a>
-                <a href="https://whatsapp.com/channel/0029VaKyRye05MUdCQWN4E0m" class="btn">Join WhatsApp channel</a>
-            </div>
+<section id="virtual-assistant">
+    <h2>Virtual Assistant</h2>
+    <div class="courses-list">
+        <div class="course-item">
+            <img src="https://img.freepik.com/free-vector/virtual-assistant-concept-illustration_114360-2428.jpg?ga=GA1.1.1704367893.1734308952&semt=ais_incoming" alt="Virtual Assistant">
+            <h3>Virtual Assistant</h3>
+            <p>Master the skills needed to become a successful virtual assistant. This course covers communication, administration, and technical skills required for the role.</p>
+            <a href="#" class="btn" onclick="alert('Course outline available after registration and payment verification.')">Course Outline</a>
+            <a href="https://whatsapp.com/channel/0029VaKyRye05MUdCQWN4E0m" class="btn">Join WhatsApp channel</a>
         </div>
-    </section>
+    </div>
+</section>
 
-    <section id="virtual-assistant">
-        <h2>Virtual Assistant</h2>
-        <div class="courses-list">
-            <div class="course-item">
-                <img src="https://img.freepik.com/free-vector/virtual-assistant-concept-illustration_114360-2428.jpg?ga=GA1.1.1704367893.1734308952&semt=ais_incoming" alt="Virtual Assistant">
-                <h3>Virtual Assistant</h3>
-                <p>Master the skills needed to become a successful virtual assistant. This course covers communication, administration, and technical skills required for the role.</p>
-                <a href="#" class="btn" onclick="alert('Course outline available after registration and payment verification.')">Course Outline</a>
-                <a href="https://whatsapp.com/channel/0029VaKyRye05MUdCQWN4E0m" class="btn">Join WhatsApp channel</a>
-            </div>
-        </div>
-    </section>
+<!-- Testimonials Section -->
+<section id="testimonials">
+    <h2>What Our Students Say</h2>
+    <div class="testimonial">
+        <p>"The training programs at Verojtech Solutions have greatly improved my technical skills. The instructors are knowledgeable and the content is very relevant."</p>
+        <h3>- Jane Doe, Web Designer</h3>
+    </div>
+    <div class="testimonial">
+        <p>"I completed the UI/UX Design course and it was fantastic. The hands-on projects and real-world examples helped me land my first job as a junior designer!"</p>
+        <h3>- John Smith, UI/UX Designer</h3>
+    </div>
+</section>
+
+<!-- Contact Form Section -->
+<section id="contact">
+    <h2>Contact Us</h2>
+    <div class="contact-form">
+        <form action="https://formspree.io/f/{your-form-id}" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="_replyto" placeholder="Your Email" required>
+            <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+</section>
 </main>
 
 <footer>
     <p>&copy; 2025 Verojtech Solutions. All Rights Reserved.</p>
+    <div>
+        <a href="https://www.facebook.com" target="_blank" class="social-icon" rel="noopener noreferrer" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.twitter.com" target="_blank" class="social-icon" rel="noopener noreferrer" title="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.linkedin.com" target="_blank" class="social-icon" rel="noopener noreferrer" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://www.instagram.com" target="_blank" class="social-icon" rel="noopener noreferrer" title="Instagram"><i class="fab fa-instagram"></i></a>
+    </div>
 </footer>
 
 <script>

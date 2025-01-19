@@ -34,16 +34,11 @@
             align-items: center;
         }
         header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
+            font-size: 2rem;
+            margin: 0;
             font-weight: 700;
             flex-grow: 1;
             text-align: center;
-        }
-        header p {
-            font-size: 1.1rem;
-            margin-top: 0.5rem;
-            font-weight: 300;
         }
 
         /* Hamburger Button */
@@ -125,27 +120,30 @@
             color: white;
             cursor: pointer;
         }
-            .container {
-        max-width: 900px;
-        margin: 20px auto;
-        padding: 20px;
-        background: #fff;
-        border-radius: 8px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        text-align: center;
+
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
         }
+
         a {
-        display: inline-block;
-        margin: 10px 10px;
-        padding: 10px 20px;
-        background: #005f87;
-        color: #fff;
-        text-decoration: none;
-        border-radius: 5px;
-        font-size: 16px;
+            display: inline-block;
+            margin: 10px 10px;
+            padding: 10px 20px;
+            background: #005f87;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
         }
+
         a:hover {
-        background: #005f87;
+            background: #004B6E;
         }
 
         /* Main Content Sections */
@@ -165,11 +163,19 @@
             color: #003366;
             font-weight: 600;
         }
+
         p, li {
             font-size: 1.1rem;
             color: #555;
             margin-bottom: 1.5rem;
             line-height: 1.8;
+        }
+
+        .course-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 1rem;
         }
 
         /* Button Styling */
@@ -186,6 +192,7 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
         }
+
         .btn:hover {
             background-color: #0056b3;
             transform: translateY(-3px);
@@ -200,6 +207,7 @@
             text-align: center;
             margin-top: 6rem;
         }
+
         footer a {
             color: white;
             text-decoration: none;
@@ -207,6 +215,7 @@
             margin: 0 1.5rem;
             transition: color 0.3s ease;
         }
+
         footer a:hover {
             color: #007BFF;
         }
@@ -216,6 +225,7 @@
             0% { opacity: 0; }
             100% { opacity: 1; }
         }
+
         @keyframes slideUp {
             0% { transform: translateY(20px); opacity: 0; }
             100% { transform: translateY(0); opacity: 1; }
@@ -224,27 +234,38 @@
         /* Responsive Design */
         @media (max-width: 768px) {
             header h1 {
-                font-size: 2.2rem;
+                font-size: 1.5rem;
             }
+
             section {
                 margin: 3rem 1rem;
                 padding: 1.5rem;
             }
+
             .btn {
                 font-size: 1rem;
                 padding: 0.8rem 2.5rem;
             }
+
             .hamburger-menu {
                 display: flex;
             }
+
             .courses-list {
-                grid-template-columns: 1fr;
+                flex-direction: column;
             }
+
             .explore-btn {
                 display: none;
             }
+
             .explore-dropdown {
                 display: none;
+            }
+
+            .register-btn-mobile {
+                display: block;
+                margin-top: 60px;
             }
         }
 
@@ -252,7 +273,32 @@
             .explore-btn {
                 display: inline-block;
             }
+
             .hamburger-menu {
+                display: none;
+            }
+
+            .courses-list {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 20px;
+            }
+
+            .course-item {
+                flex: 1 1 calc(33.333% - 20px);
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                padding: 1rem;
+                border-radius: 8px;
+                background-color: #fff;
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
+
+            .course-item:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+            }
+
+            .register-btn-mobile {
                 display: none;
             }
         }
@@ -261,44 +307,36 @@
 <body>
 
 <header>
-    <div class="hamburger-menu">
+    <div class="hamburger-menu" aria-label="Menu" aria-expanded="false" role="button" tabindex="0">
         <div></div>
         <div></div>
         <div></div>
     </div>
-    <h4>Verojtech Solutions Training Programs</h4>
-    <div>
-        <a href="#" class="btn explore-btn">Explore Courses</a>
-        <!-- Dropdown Menu for Explore Courses -->
-        <div class="explore-dropdown">
-            <span class="close-btn">×</span>
-            <a href="#data-processing">Data Processing</a>
-            <a href="#web-design">Web Design</a>
-            <a href="#app-development">App Development</a>
-            <a href="#graphics-design">Graphics Design</a>
-            <a href="#ui-ux-design">UI/UX Design</a>
-        </div>
-        
+    <h1>Verojtech Solutions Training Programs</h1>
+    <div class="register-btn-wrapper">
+        <a href="https://forms.gle/Cxe5uq3gvBzRRxRs8" class="btn" target="_blank" rel="noopener noreferrer">Register Now</a>
     </div>
 </header>
 
+<!-- Register button for mobile -->
+<div class="register-btn-mobile">
+    <a href="https://forms.gle/Cxe5uq3gvBzRRxRs8" class="btn" target="_blank" rel="noopener noreferrer">Register Now</a>
+</div>
+
 <!-- Dropdown Menu for Hamburger -->
 <div class="dropdown-menu">
-    <span class="close-btn">×</span>
+    <span class="close-btn" aria-label="Close Menu" role="button" tabindex="0">×</span>
     <a href="#data-processing">Data Processing</a>
     <a href="#web-design">Web Design</a>
     <a href="#app-development">App Development</a>
-    <a href="#graphics-design">Graphics Design</a>h
+    <a href="#graphics-design">Graphics Design</a>
     <a href="#ui-ux-design">UI/UX Design</a>
-    
-
+    <a href="#video-editing">Video Editing</a>
+    <a href="#virtual-assistant">Virtual Assistant</a>
 </div>
 
 <main>
-    <section>
-        <a href="https://forms.gle/Cxe5uq3gvBzRRxRs8" class="btn" target="_blank" rel="noopener noreferrer">Register Now</a>
-    </section>
-    <section id="#data-processing">
+    <section id="data-processing">
         <h2>Data Processing</h2>
         <div class="courses-list">
             <div class="course-item">
@@ -311,7 +349,7 @@
         </div>
     </section>
 
-    <section id="#web-design">
+    <section id="web-design">
         <h2>Web Design</h2>
         <div class="courses-list">
             <div class="course-item">
@@ -350,11 +388,11 @@
         </div>
     </section>
 
-    <section id="#ui-ux-design">
+    <section id="ui-ux-design">
         <h2>UI/UX Design</h2>
         <div class="courses-list">
             <div class="course-item">
-                <img src="https://img.freepik.com/free-vector/gradient-ui-ux-background_23-2149065782.jpg?ga=GA1.1.1704367893.1734308952&semt=ais_incoming" alt="Graphics Design">
+                <img src="https://img.freepik.com/free-vector/gradient-ui-ux-background_23-2149065782.jpg?ga=GA1.1.1704367893.1734308952&semt=ais_incoming" alt="UI/UX Design">
                 <h3>UI/UX Design</h3>
                 <p>Master the art of creating intuitive, engaging, and user-friendly digital experiences. This course is designed for beginners and professionals looking to enhance their design skills and understand user-centric design principles.</p>
                 <a href="#" class="btn" onclick="alert('Course outline available after registration and payment verification.')">Course Outline</a>
@@ -363,11 +401,69 @@
         </div>
     </section>
 
+    <section id="video-editing">
+        <h2>Video Editing</h2>
+        <div class="courses-list">
+            <div class="course-item">
+                <img src="https://img.freepik.com/free-vector/video-editing-concept-illustration_114360-11318.jpg?ga=GA1.1.1704367893.1734308952&semt=ais_incoming" alt="Video Editing">
+                <h3>Video Editing</h3>
+                <p>Learn to edit videos like a pro using industry-standard software. This course covers everything from basic editing techniques to advanced effects.</p>
+                <a href="#" class="btn" onclick="alert('Course outline available after registration and payment verification.')">Course Outline</a>
+                <a href="https://whatsapp.com/channel/0029VaKyRye05MUdCQWN4E0m" class="btn">Join WhatsApp channel</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="virtual-assistant">
+        <h2>Virtual Assistant</h2>
+        <div class="courses-list">
+            <div class="course-item">
+                <img src="https://img.freepik.com/free-vector/virtual-assistant-concept-illustration_114360-2428.jpg?ga=GA1.1.1704367893.1734308952&semt=ais_incoming" alt="Virtual Assistant">
+                <h3>Virtual Assistant</h3>
+                <p>Master the skills needed to become a successful virtual assistant. This course covers communication, administration, and technical skills required for the role.</p>
+                <a href="#" class="btn" onclick="alert('Course outline available after registration and payment verification.')">Course Outline</a>
+                <a href="https://whatsapp.com/channel/0029VaKyRye05MUdCQWN4E0m" class="btn">Join WhatsApp channel</a>
+            </div>
+        </div>
+    </section>
 </main>
 
 <footer>
     <p>&copy; 2025 Verojtech Solutions. All Rights Reserved.</p>
 </footer>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const hamburgerMenu = document.querySelector('.hamburger-menu');
+        const dropdownMenu = document.querySelector('.dropdown-menu');
+        const exploreBtn = document.querySelector('.explore-btn');
+        const exploreDropdown = document.querySelector('.explore-dropdown');
+        const closeBtns = document.querySelectorAll('.close-btn');
+
+        hamburgerMenu.addEventListener('click', function() {
+            const isExpanded = hamburgerMenu.getAttribute('aria-expanded') === 'true' || false;
+            hamburgerMenu.setAttribute('aria-expanded', !isExpanded);
+            dropdownMenu.style.display = isExpanded ? 'none' : 'block';
+            dropdownMenu.style.opacity = isExpanded ? '0' : '1';
+        });
+
+        exploreBtn.addEventListener('click', function() {
+            const isExpanded = exploreBtn.getAttribute('aria-expanded') === 'true' || false;
+            exploreBtn.setAttribute('aria-expanded', !isExpanded);
+            exploreDropdown.style.display = isExpanded ? 'none' : 'block';
+            exploreDropdown.style.opacity = isExpanded ? '0' : '1';
+        });
+
+        closeBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                dropdownMenu.style.display = 'none';
+                dropdownMenu.style.opacity = '0';
+                exploreDropdown.style.display = 'none';
+                exploreDropdown.style.opacity = '0';
+            });
+        });
+    });
+</script>
 
 </body>
 </html>
